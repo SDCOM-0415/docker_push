@@ -41,6 +41,6 @@ jobs:
             file: ./push/dockerfile
             push: true
             tags: |
-                docker.io/sdcom/baota:ubuntu
+                
                 ghcr.io/sdcom/baota:ubuntu
                 
