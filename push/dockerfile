@@ -1,2 +1,2 @@
-FROM docker.cnb.cool/chuangyillc/tech/sdcom-docker/baota:latest
+FROM docker.cnb.cool/chuangyillc/tech/sdcom-docker/baota:debian
 
