@@ -1,0 +1,1 @@
+FROM docker.cnb.cool/chuangyillc/tech/sdcom-docker/baota:latest
