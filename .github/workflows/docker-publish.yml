@@ -31,4 +31,4 @@ jobs:
             context: .
             file: ./push/dockerfile
             push: true
-            tags: sdcom/baota:latest
+            tags: sdcom/baota:ubuntu
