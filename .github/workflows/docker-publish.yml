@@ -31,4 +31,4 @@ jobs:
             context: .
             file: ./push/dockerfile
             push: true
-            tags: ${{ secrets.DOCKERHUB_USERNAME }}/baota:ubuntu
+            tags: ${{ secrets.DOCKERHUB_USERNAME }}/baota:debian
