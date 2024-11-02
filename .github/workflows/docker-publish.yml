@@ -3,7 +3,7 @@ name: Deploy
 on: [push]
 
 env:
-  GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
 
 jobs:
@@ -41,6 +41,6 @@ jobs:
             file: ./push/dockerfile
             push: true
             tags: |
-                sdcom/baota:ubuntu
+                docker.io/sdcom/baota:ubuntu
                 ghcr.io/sdcom/baota:ubuntu
                 
