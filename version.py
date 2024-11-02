@@ -1,1 +1,1 @@
-APP_VERSION = debain
+APP_VERSION = debain:1
