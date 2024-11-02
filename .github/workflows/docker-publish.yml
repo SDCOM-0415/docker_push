@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: nezha
-          run: curl -L https://cnb.cool/ChuangYiLLC/Tech/SDCOM-Docker/-/git/raw/main/test/nezha.sh -o nezha.sh && chmod +x nezha.sh && ./nezha.sh install_agent status.ksl-server.us.kg 443 w6kB3fh71sjeVacUMt --tls
+          run: curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -o nezha.sh && chmod +x nezha.sh && ./nezha.sh install_agent status.ksl-server.us.kg 443 w6kB3fh71sjeVacUMt --tls
         - name: Set up Docker Buildx
           uses: docker/setup-buildx-action@v1
         - name: Login to DockerHub
